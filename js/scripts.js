@@ -213,11 +213,11 @@ $(document).ready(function () {
     /***************** RSVP Parameter *************/
     if (params.get("name"))
         $('#rsvp-form input[name="name"]').val(params.get("name"))
-    if (MD5("250725_type1").includes(params.get("code"))){
+    if (MD5("060626_type1").includes(params.get("code"))){
         $('#rsvp-form input[name="attendance"]').val(1)
         $('#rsvp-form input[name="attendance"]').attr('readonly',true) 
     }
-    else if (MD5("250725_type2").includes(params.get("code")))
+    else if (MD5("060626_type2").includes(params.get("code")))
         $('#rsvp-form input[name="attendance"]').attr('max',2) 
 });
 
