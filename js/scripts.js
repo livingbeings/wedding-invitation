@@ -1,5 +1,19 @@
 $(document).ready(function () {
     const params = new URLSearchParams(window.location.search);
+
+    /***************** Envelope Reveal ******************/
+    $('#envelope-overlay').click(function() {
+        var $overlay = $(this);
+        $overlay.addClass('animate');
+        
+        // Wait for flap and letter animation to complete before fading out
+        setTimeout(function() {
+            $overlay.addClass('open');
+            setTimeout(function() {
+                $overlay.hide();
+            }, 1000);
+        }, 2500); // Adjust timing based on CSS transitions
+    });
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {

@@ -61,6 +61,21 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body id="top">
+<div id="envelope-overlay">
+    <div class="envelope-wrapper">
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="letter">
+                <div class="text-center">
+                    <h2 class="names-reveal">Marcella & Alex</h2>
+                    <p class="invite-msg">You're Invited</p>
+                </div>
+            </div>
+            <div class="front"></div>
+        </div>
+        <div class="envelope-tap">TAP TO OPEN</div>
+    </div>
+</div>
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -75,9 +90,9 @@
                             <li><a href="#home">Home</a></li>
                             <li><a href="#schedule">Schedule</a></li>
                             <li><a href="#dc-modal" data-toggle="modal" data-target="#dc-modal">Dress Code</a></li>
-                            <li><a href="#information">Information</a></li>
                             <li><a href="#eng-pics">Photo Album</a></li>
-                            <li><a href="#rsvp">RSVP</a></li>
+                            <li><a href="#spotify-playlist">Spotify</a></li>
+                            <li><a href="#information">Information</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -102,20 +117,23 @@
     <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
 </section>
 
-<section id="invitation" class="section-padding invite-section">
+<section id="our-story" class="section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 text-center">
-                <h3 class="names">MARCELLA & ALEX</h3>
-                <p class="invite-text">invite you to join them for their wedding</p>
-                <p class="on-text">on</p>
-                <div class="dates">
-                    <p>SATURDAY</p>
-                    <h2>06.06.26</h2>
+            <div class="col-md-12 text-center">
+                <h3 class="header">Our Story</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Marcella and Alex's journey began with a shared love for adventure and deep conversations. Over the years, they have built a life filled with laughter, travel, and mutual support. From their first meeting to the moment they decided to spend forever together, every chapter has been a testament to their growing bond.</p>
+                <p>They believe that the best stories are the ones we write together, and they are so excited to start this new chapter as husband and wife, surrounded by the people who mean the most to them.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6"><img src="img/MMM_7539.jpg" class="img-responsive wp1" alt="Our Story 1"></div>
+                    <div class="col-md-6"><img src="img/MMM_8962.jpg" class="img-responsive wp2" alt="Our Story 2"></div>
                 </div>
-                <p class="at-text">at</p>
-                <p class="location">Padma Ubud, 24 Allée du Bonheur, 31100 Toulouse</p>
-                <p class="location">Indonesia</p>
             </div>
         </div>
     </div>
@@ -442,6 +460,24 @@
     </div> 
 </section>
 
+<section id="spotify-playlist" class="section-padding text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="header">Spotify Wedding Playlist</h3>
+                <p>Scan to listen to our wedding playlist</p>
+                <div class="spotify-barcode">
+                    <img src="img/QR_spotify.png" alt="Spotify Barcode" style="max-width: 200px; margin: 0 auto;">
+                </div>
+                <div class="playlist-link" style="margin-top: 20px;">
+                    <a href="https://open.spotify.com/playlist/6gNJaOCMIWpiYmf7fe6oaw?si=9ecb1982cca74c5d" class="btn btn-accent btn-small">Open in Spotify</a>
+                </div>
+                <!-- <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6gNJaOCMIWpiYmf7fe6oaw?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="information" class="section-padding">
     <div class="container">
         <div class="row">
@@ -453,40 +489,39 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     
-                    <!-- Transport -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTransport">
-                            <h4 class="panel-title">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTransport" aria-expanded="true" aria-controls="collapseTransport">
-                                    Transport
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTransport" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTransport">
-                            <div class="panel-body">
-                                <p>You can fly into either Toulouse or Carcassonne. Toulouse is slightly closer, but either work fine.</p>
-                                <p>For our Northern loves, you can fly from Manchester to Carcassonne.</p>
-                                <p>The house is very rural, and the area is not hugely touristy. There is no public transport, so a car to get around is a necessity. Cars are easy enough to hire from the airports, but most companies require you to have a credit card, so please ensure you are prepared with that.</p>
-                                <p>Message us with any questions, worries or queries!</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Accommodation -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingAccommodation">
                             <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAccommodation" aria-expanded="false" aria-controls="collapseAccommodation">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAccommodation" aria-expanded="true" aria-controls="collapseAccommodation">
                                     Accommodation
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseAccommodation" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAccommodation">
+                        <div id="collapseAccommodation" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccommodation">
                             <div class="panel-body">
                                 <p>If we haven't already discussed accommodation with you, once you have RSVP'd, get in touch to discuss recommendations! Our advice is to book ASAP as the area is so rural and not massively touristy, so there aren't many hotels or accommodation options, and the good ones will get booked up quickly. We have a list of places that are within the distance of our transfers to and from the wedding.</p>
                                 <p>Due to the taxi transfers we are organising, please let us know where you have booked!</p>
                                 <p>If you independently find accommodation, please speak with us about the taxi to and from the wedding prior to booking as there are restrictions on distance.</p>
                                 <p>If you are planning your own transport to and from the wedding - go crazy, stay wherever you like - Toulouse and Carcassonne are both gorgeous cities about an hour away, and Revel is a nice little town about 20 minutes away! Bear in mind that Ubers aren't a thing here and taxis are rare, and pricey.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Local Area -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingLocalArea">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseLocalArea" aria-expanded="false" aria-controls="collapseLocalArea">
+                                    Local Area to Explore
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseLocalArea" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLocalArea">
+                            <div class="panel-body">
+                                <p>The area is rural, and things aren't open all day long - usually restaurants open for lunch between 12 - 2pm, and then later on for dinner. Supermarkets also close during the day, so check their opening times before making a trip - it's a slow paced life.</p>
+                                <p>Nearby to us is a small town called Revel - every Saturday morning they have a wonderful food market. If you wanted to visit this before the Day 2 celebrations, it's recommended! Revel is also lovely for dinners and drinks, although very quiet and opening times often vary - quintessentially french.</p>
+                                <p>There is also a lovely lake nearby, called Lac Saint Ferreol which is perfect for swimming or walking around, with some restaurants surrounding it.</p>
                             </div>
                         </div>
                     </div>
@@ -502,103 +537,8 @@
                         </div>
                         <div id="collapseTransfers" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTransfers">
                             <div class="panel-body">
-                                <p>On the day of the wedding (06-06-26), we will organise for you to be picked up from your accommodation, and afterwards Andy Le Cabbie will be running a shuttle service home from midnight to 2.30am. If you think you will need to leave the wedding earlier than this, please speak to us.</p>
-                                <p>The following day for the BBQ Pool Party, we will also organise for you to get to and from the party!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Photos & Videos -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingPhotos">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsePhotos" aria-expanded="false" aria-controls="collapsePhotos">
-                                    Photos & Videos
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapsePhotos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPhotos">
-                            <div class="panel-body">
-                                <p>A common question is whether you can take photos and videos, and post them.</p>
-                                <p>We do have a photographer, but please feel free to take as many pictures and videos as you like - and please please share them with us!</p>
-                                <p>You're welcome to post them on socials as and when you please - tag us honies!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Food & Beverage -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingFood">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFood" aria-expanded="false" aria-controls="collapseFood">
-                                    Food & Beverage
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFood" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFood">
-                            <div class="panel-body">
-                                <p>There will be free flowing wine and beer throughout the two days, with some cocktails occasionally sprinkled in for good measure.</p>
-                                <p>If you would like to drink anything else, such as spirits, feel free to pick them up at duty free on your way over!</p>
-                                <p>On the day of the wedding, there will canapes, followed by a 3-course meal in the late afternoon. There will also be a late night snack provided.</p>
-                                <p>On our pool party day, there will be a selection of charcuterie for lunch, followed by hot dogs and a BBQ for dinner.</p>
-                                <p>If you have any dietary requirements, please let us know as soon as possible.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Plus Ones -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingPlusOnes">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsePlusOnes" aria-expanded="false" aria-controls="collapsePlusOnes">
-                                    Plus Ones
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapsePlusOnes" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPlusOnes">
-                            <div class="panel-body">
-                                <p>As much as we would love for you to bring a plus one, we only have the capacity for those who are written on the invitation. It is a small and intimate wedding with our closest family and friends and we can't wait to celebrate with you. <3</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Local Area -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingLocalArea">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseLocalArea" aria-expanded="false" aria-controls="collapseLocalArea">
-                                    Local Area
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseLocalArea" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLocalArea">
-                            <div class="panel-body">
-                                <p>The area is rural, and things aren't open all day long - usually restaurants open for lunch between 12 - 2pm, and then later on for dinner. Supermarkets also close during the day, so check their opening times before making a trip - it's a slow paced life.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Recommendations -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingRecommendations">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseRecommendations" aria-expanded="false" aria-controls="collapseRecommendations">
-                                    Recommendations
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseRecommendations" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingRecommendations">
-                            <div class="panel-body">
-                                <p>If you are planning to explore the area before or after the wedding, here are some recommendations of things to do!</p>
-                                <p>Nearby to us is a small town called Revel - every Saturday morning they have a wonderful food market. If you wanted to visit this before the Day 2 celebrations, it's recommended! Revel is also lovely for dinners and drinks, although very quiet and opening times often vary - quintessentially french.</p>
-                                <p>There is also a lovely lake nearby, called Lac Saint Ferreol which is perfect for swimming or walking around, with some restaurants surrounding it.</p>
-                                <p>The two closest cities to us are Toulouse and Carcassonne. Both are lovely cities to visit - the Medieval City of Carcassonne is a must visit for a day.</p>
-                                <p>Some other towns to note within your research of where to visit are: Albi, Narbonne (near to the coast), Gruissan Plage (coastal), Plage de Collioure (coastal), Montpellier, and Nimes.</p>
-                                <h5>Vineyards</h5>
-                                <p>Minervois, Cabardes, Corbieres are all areas 1 - 2 hours away.</p>
-                                <p>A vineyard on the way to Carcassonne is Domaine Gayda - we've been a few times and it's lovely but you need to check opening times!</p>
-                                <h5>Spain</h5>
-                                <p>Barcelona is about a 3 - 4 hour drive, and I couldn't recommend enough a small town called Tossa de Mar if you're heading that way - if you go here get in touch about hotel recommendations.</p>
+                                <p><strong>From Airport to Hotel:</strong> You can fly into either Toulouse or Carcassonne. Toulouse is slightly closer, but either work fine. Since there is no public transport, we recommend hiring a car from the airport.</p>
+                                <p><strong>From Hotel to Venue:</strong> On the day of the wedding (06-06-26), we will organise for you to be picked up from your accommodation, and afterwards Andy Le Cabbie will be running a shuttle service home from midnight to 2.30am.</p>
                             </div>
                         </div>
                     </div>
