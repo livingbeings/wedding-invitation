@@ -89,11 +89,12 @@
             <nav class="header-nav">
                 <ul class="primary-nav">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#dc-modal" data-toggle="modal" data-target="#dc-modal">Dress Code</a></li>
+                    <li><a href="#our-story">Our Story</a></li>
+                    <li><a href="#schedule">Schedule & RSVP</a></li>
+                    <li><a href="#photo-album">Photo Album</a></li>
+                    <li><a href="#video-bg">Video Playback</a></li>
+                    <li><a href="#spotify-playlist">Spotify Playlist</a></li>
                     <li><a href="#information">Information</a></li>
-                    <li><a href="#eng-pics">Photo Album</a></li>
-                    <li><a href="#rsvp">RSVP</a></li>
                 </ul>
             </nav>
         </div>
@@ -109,7 +110,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="hero-content">
-                        <p class="hero-subtitle">we're getting married</p>
+                        <!-- <p class="hero-subtitle">we're getting married</p> -->
                     </div>
                 </div>
             </div>
@@ -188,13 +189,6 @@
                 </div>
             </div>
         </div>
-        <div class="row section-padding">
-            <div class="col-md-4 col-md-offset-4 text-center">
-                <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
-                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code
-                </a>
-            </div>
-        </div>
     </div>
 
     <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
@@ -223,10 +217,6 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-</section>
-
-<section class="rsvp text-center" id="rsvp">
-
     <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -243,7 +233,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div class="container">
+    <div class="container text-center">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>RSVP</h3>
@@ -262,11 +252,10 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="attendance" class="" min="1"
-                                                                  max="3"
-                                                                  placeholder="Number of guests attending"
-                                                                  title="Number of guests attending"
-                                                                  required>
+                                <i class="fa fa-cutlery"></i><input type="text" name="allergy" class=""
+                                                                placeholder="Any dietary restriction?"
+                                                                title="Any dietary restriction?"
+                                                                >
                             </div>
                         </div>
                     </div>
@@ -275,7 +264,7 @@
                             <div class="form-input-group">
                                 <i class="fa fa-bed"></i>
                                 <select name="accomodation" class="" required>
-                                    <option value="no" selected hidden>Do you need accomodation?</option>
+                                    <option value="no" selected disabled>Do you need accomodation?</option>
                                     <option value="yes">I need accomodation</option>
                                     <option value="no">I do not need accomodation</option>
                                 </select>
@@ -283,11 +272,15 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-cutlery"></i><input type="text" name="allergy" class=""
-                                                                placeholder="Any dietary restriction?"
-                                                                title="Any dietary restriction?"
-                                                                >
+                                <i class="fa fa-users"></i>
+                                <select name="attendance" class="" onchange="updateGuest(this)" required>
+                                    <option value="1" selected disabled >Number of guests attending</option>
+                                </select>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="guest-name">
                         </div>
                     </div>
                     <div class="row">
@@ -300,7 +293,7 @@
     </div>
 </section>
 
-<section id="eng-pics" class="section-padding">
+<section id="photo-album" class="section-padding">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -466,14 +459,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="header">Spotify Wedding Playlist</h3>
-                <p>Scan to listen to our wedding playlist</p>
-                <div class="spotify-barcode">
-                    <img src="img/QR_spotify.png" alt="Spotify Barcode" style="max-width: 200px; margin: 0 auto;">
-                </div>
-                <div class="playlist-link" style="margin-top: 20px;">
-                    <a href="https://open.spotify.com/playlist/6gNJaOCMIWpiYmf7fe6oaw?si=9ecb1982cca74c5d" class="btn btn-accent btn-small">Open in Spotify</a>
-                </div>
-                <!-- <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6gNJaOCMIWpiYmf7fe6oaw?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6gNJaOCMIWpiYmf7fe6oaw?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
     </div>

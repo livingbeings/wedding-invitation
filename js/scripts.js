@@ -88,13 +88,14 @@ $(document).ready(function () {
     $('.nav-toggle').click(function () {
         $(this).toggleClass('active');
         $('.header-nav').toggleClass('open');
+        $('body').toggleClass('nav-open');
         event.preventDefault();
     });
     /* When user clicks a link */
     $('.header-nav li a').click(function () {
-        $('.nav-toggle').toggleClass('active');
-        $('.header-nav').toggleClass('open');
-
+        $('.nav-toggle').removeClass('active');
+        $('.header-nav').removeClass('open');
+        $('body').removeClass('nav-open');
     });
 
     /***************** Smooth Scrolling ******************/
@@ -194,12 +195,17 @@ $(document).ready(function () {
     /***************** RSVP Parameter *************/
     if (params.get("name"))
         $('#rsvp-form input[name="name"]').val(params.get("name"))
-    if (MD5("060626_type1").includes(params.get("code"))){
-        $('#rsvp-form input[name="attendance"]').val(1)
-        $('#rsvp-form input[name="attendance"]').attr('readonly',true) 
+    if (MD5("060626_type1").includes(params.get("code")))
+        $('#rsvp-form select[name="attendance"]').append('<option selected disabled value="1">1</option>')
+    else if (MD5("060626_type2").includes(params.get("code"))){
+        $('#rsvp-form select[name="attendance"]').append('<option value="1">1</option>')
+        $('#rsvp-form select[name="attendance"]').append('<option value="2">2</option>')
     }
-    else if (MD5("060626_type2").includes(params.get("code")))
-        $('#rsvp-form input[name="attendance"]').attr('max',2) 
+    else if (MD5("060626_type3").includes(params.get("code"))){
+        $('#rsvp-form select[name="attendance"]').append('<option value="1">1</option>')
+        $('#rsvp-form select[name="attendance"]').append('<option value="2">2</option>')
+        $('#rsvp-form select[name="attendance"]').append('<option value="3">3</option>')
+    }
 });
 
 /********************** Extras **********************/
@@ -469,3 +475,29 @@ const throttle = (func, limit) => {
         }
     };
 };
+
+function updateGuest(_this) {
+  var itemCount = +_this.value //get the value
+  var guestName = document.querySelector('#guest-name') //append results
+  guestName.innerHTML=''
+  if (itemCount=="1")
+    return
+  itemCount-=1
+  for (var i = 1; i <= itemCount; i++) {
+    var formInput = document.createElement('div')
+    var iconInput = document.createElement('i')
+    var input = document.createElement('input') //create input
+    formInput.className ="form-input-group"
+    iconInput.className="fa fa-user"
+    input.type = "text";
+    input.placeholder = "Name of your extras"; //add a placeholder
+    input.title = "Name of your extras";
+    input.name="extras_"+i
+    input.required = true;
+    
+    formInput.appendChild(iconInput)
+    formInput.appendChild(input)
+    guestName.appendChild(formInput); //append input
+  }
+}
+
