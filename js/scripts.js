@@ -501,3 +501,22 @@ function updateGuest(_this) {
   }
 }
 
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+  const element = document.getElementById('spotify-embed');
+  const options = {
+    uri: 'https://open.spotify.com/playlist/6gNJaOCMIWpiYmf7fe6oaw?si=122399ecf08b4fa7', 
+    theme: 'dark',
+    width: '100%',
+    height: '352',
+    frameBorder:"0",
+    allow:"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture",
+    loading:"lazy"
+  };
+  const callback = (EmbedController) => {
+    EmbedController.addListener('ready', () => {
+        setTimeout(EmbedController.play,1000)
+    });
+  };
+
+  IFrameAPI.createController(element, options, callback);
+};
