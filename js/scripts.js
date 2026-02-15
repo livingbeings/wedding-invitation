@@ -510,7 +510,9 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     height: '352',
     frameBorder:"0",
     allow:"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture",
-    loading:"lazy"
+    loading:"lazy",
+    scrolling: "no",
+    style:"overflow:hidden"
   };
   const callback = (EmbedController) => {
     EmbedController.addListener('ready', () => {

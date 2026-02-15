@@ -107,6 +107,23 @@
         font-size: 50px;
     }
 
+    .logo-title {
+        font-size: 30px !important;
+    }
+
+    h3.header {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .rsvp-form .form-input-group {
+        width: 100% !important;
+    }
+    
+    .rsvp-form .col-md-6, .rsvp-form .col-sm-6 {
+        width: 100% !important;
+    }
+
     .btn-margin-right {
         margin-right: 0px;
     }
