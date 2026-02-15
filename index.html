@@ -263,6 +263,18 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
+                                <i class="fa fa-envelope"></i>
+                                <select name="event" class="" required>
+                                    <option value="no" selected disabled>Will you attend the event?</option>
+                                    <option value="yes Matrimony">Holy Matrimony</option>
+                                    <option value="yes Reception">Reception</option>
+                                    <option value="yes both">Holy Matrimony and Reception</option>
+                                    <option value="no">I can't attend the event</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
                                 <i class="fa fa-bed"></i>
                                 <select name="accomodation" class="" required>
                                     <option value="no" selected disabled>Do you need accomodation?</option>
@@ -271,7 +283,9 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="form-input-group">
                                 <i class="fa fa-users"></i>
                                 <select name="attendance" class="" onchange="updateGuest(this)" required>

@@ -488,7 +488,7 @@ function updateGuest(_this) {
     var iconInput = document.createElement('i')
     var input = document.createElement('input') //create input
     formInput.className ="form-input-group"
-    iconInput.className="fa fa-user"
+    iconInput.className="fa fa-users"
     input.type = "text";
     input.placeholder = "Name of your extras"; //add a placeholder
     input.title = "Name of your extras";
