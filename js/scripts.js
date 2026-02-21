@@ -82,22 +82,6 @@ $(document).ready(function () {
     /***************** Tooltips ******************/
     $('[data-toggle="tooltip"]').tooltip();
 
-    /***************** Nav Transformicon ******************/
-
-    /* When user clicks the Icon */
-    $('.nav-toggle').click(function () {
-        $(this).toggleClass('active');
-        $('.header-nav').toggleClass('open');
-        $('body').toggleClass('nav-open');
-        event.preventDefault();
-    });
-    /* When user clicks a link */
-    $('.header-nav li a').click(function () {
-        $('.nav-toggle').removeClass('active');
-        $('.header-nav').removeClass('open');
-        $('body').removeClass('nav-open');
-    });
-
     /***************** Smooth Scrolling ******************/
 
     $(function () {
