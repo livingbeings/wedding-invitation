@@ -158,6 +158,7 @@ $(document).ready(function () {
             hashTime.getUTCHours().toString().padStart(2, '0');
         const code = MD5(params.get("code")+hashTimeFormat)
         var data = $(this).serialize();
+        console.log(data)
         data+="&invite_code="+code
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
@@ -178,17 +179,33 @@ $(document).ready(function () {
     },4000));
     /***************** RSVP Parameter *************/
     if (params.get("name"))
-        $('#rsvp-form input[name="name"]').val(params.get("name"))
+        $('#rsvp-form input[name="name"]').val(params.get("name"));
     if (MD5("060626_type1").includes(params.get("code")))
-        $('#rsvp-form select[name="attendance"]').append('<option selected disabled value="1">1</option>')
+        $('#rsvp-form select[name="attendance"]').append('<option selected disabled value="1">1</option>');
     else if (MD5("060626_type2").includes(params.get("code"))){
-        $('#rsvp-form select[name="attendance"]').append('<option value="1">1</option>')
-        $('#rsvp-form select[name="attendance"]').append('<option value="2">2</option>')
+        $('#rsvp-form select[name="attendance"]').append('<option value="1">1</option>');
+        $('#rsvp-form select[name="attendance"]').append('<option value="2">2</option>');
+        if (params.getAll("extras").length==1){
+            var extras = params.getAll("extras");
+            $('#rsvp-form select[name="attendance"]').val('2').change();
+            $('#rsvp-form input[name="extras_1"]').val(extras.pop())
+        }
     }
     else if (MD5("060626_type3").includes(params.get("code"))){
         $('#rsvp-form select[name="attendance"]').append('<option value="1">1</option>')
         $('#rsvp-form select[name="attendance"]').append('<option value="2">2</option>')
         $('#rsvp-form select[name="attendance"]').append('<option value="3">3</option>')
+        if (params.getAll("extras").length==1){
+            var extras = params.getAll("extras");
+            $('#rsvp-form select[name="attendance"]').val('2').change()
+            $('#rsvp-form input[name="extras_1"]').val(extras.pop())
+        }
+        else if (params.getAll("extras").length==2){
+            var extras = params.getAll("extras");
+            $('#rsvp-form select[name="attendance"]').val('3').change()
+            $('#rsvp-form input[name="extras_1"]').val(extras.pop())
+            $('#rsvp-form input[name="extras_2"]').val(extras.pop())
+        }
     }
 });
 
