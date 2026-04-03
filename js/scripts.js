@@ -1,123 +1,129 @@
 $(document).ready(function () {
     const params = new URLSearchParams(window.location.search);
 
-    /***************** Envelope Reveal ******************/
-    $('#envelope-overlay').click(function() {
-        var $overlay = $(this);
-        $overlay.addClass('animate');
+    /***************** Welcome Modal & Audio ******************/
+    $('#btn-open-invitation').click(function() {
+        $('#modal-welcome').addClass('remove');
+        $('#song')[0].play();
+        $('body').css('overflow', 'auto');
+    });
+
+    /***************** Hero Swiper ******************/
+    const swiper = new Swiper('.hero-swiper', {
+        loop: true,
+        effect: 'fade',
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+
+    /***************** Countdown Timer ******************/
+    const weddingDate = new Date("June 6, 2026 09:00:00").getTime();
+    
+    const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        $('.days').text(days < 10 ? '0' + days : days);
+        $('.hours').text(hours < 10 ? '0' + hours : hours);
+        $('.minutes').text(minutes < 10 ? '0' + minutes : minutes);
+        $('.seconds').text(seconds < 10 ? '0' + seconds : seconds);
+
+        if (distance < 0) {
+            clearInterval(timer);
+            $('.countdown-wrapper').html("<h3>ALREADY MARRIED</h3>");
+        }
+    }, 1000);
+
+    /***************** Audio Control ******************/
+    $('#btn-audio-toggle').click(function() {
+        const audio = $('#song')[0];
+        const icon = $(this).find('i');
         
-        // Wait for flap and letter animation to complete before fading out
-        setTimeout(function() {
-            $overlay.addClass('open');
-            setTimeout(function() {
-                $overlay.hide();
-                $('.navicon').fadeIn(); // Show navicon after envelope is gone
-            }, 1000);
-        }, 2500); // Adjust timing based on CSS transitions
+        if (audio.paused) {
+            audio.play();
+            icon.removeClass('fa-play-circle').addClass('fa-pause-circle');
+        } else {
+            audio.pause();
+            icon.removeClass('fa-pause-circle').addClass('fa-play-circle');
+        }
     });
 
     /***************** Waypoints ******************/
-
     $('.wp1').waypoint(function () {
-        $('.wp1').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
+        $('.wp1').addClass('animated fadeInUp');
+    }, { offset: '85%' });
+    
     $('.wp2').waypoint(function () {
-        $('.wp2').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
+        $('.wp2').addClass('animated fadeInLeft');
+    }, { offset: '85%' });
+    
     $('.wp3').waypoint(function () {
-        $('.wp3').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
+        $('.wp3').addClass('animated fadeInRight');
+    }, { offset: '85%' });
+    
     $('.wp4').waypoint(function () {
-        $('.wp4').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
+        $('.wp4').addClass('animated fadeInLeft');
+    }, { offset: '85%' });
+    
     $('.wp5').waypoint(function () {
-        $('.wp5').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
+        $('.wp5').addClass('animated fadeInRight');
+    }, { offset: '85%' });
+    
     $('.wp6').waypoint(function () {
-        $('.wp6').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
+        $('.wp6').addClass('animated fadeInLeft');
+    }, { offset: '85%' });
+    
     $('.wp7').waypoint(function () {
-        $('.wp7').addClass('animated fadeInUp');
-    }, {
-        offset: '75%'
-    });
+        $('.wp7').addClass('animated fadeInRight');
+    }, { offset: '85%' });
+    
     $('.wp8').waypoint(function () {
-        $('.wp8').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
+        $('.wp8').addClass('animated zoomIn');
+    }, { offset: '85%' });
+    
     $('.wp9').waypoint(function () {
-        $('.wp9').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
+        $('.wp9').addClass('animated zoomIn');
+    }, { offset: '85%' });
 
-    /***************** Initiate Flexslider ******************/
-    $('.flexslider').flexslider({
-        animation: "slide"
-    });
-
-    /***************** Initiate Fancybox ******************/
-
-    $('.single_image').fancybox({
-        padding: 4
-    });
-
+    /***************** Fancybox ******************/
     $('.fancybox').fancybox({
         padding: 4,
         width: 1000,
         height: 800
     });
 
-    /***************** Tooltips ******************/
-    $('[data-toggle="tooltip"]').tooltip();
-
-    /***************** Nav Transformicon ******************/
-
-    /* When user clicks the Icon */
+    /***************** Navigation ******************/
     $('.nav-toggle').click(function (event) {
         $(this).toggleClass('active');
         $('.header-nav').toggleClass('open');
-        $('body').toggleClass('nav-open');
         event.preventDefault();
     });
-    /* When user clicks a link */
+    
     $('.header-nav li a').click(function () {
         $('.nav-toggle').removeClass('active');
         $('.header-nav').removeClass('open');
-        $('body').removeClass('nav-open');
     });
 
     /***************** Smooth Scrolling ******************/
-
-    $(function () {
-
-        $('a[href*=#]:not([href=#]):not([data-toggle="collapse"])').click(function () {
-            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 90
-                    }, 2000);
-                    return false;
-                }
+    $('a[href*=#]:not([href=#])').click(function () {
+        if ($(this).attr('data-toggle') === 'collapse') return;
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top - 70
+                }, 1000);
+                return false;
             }
-        });
-
+        }
     });
 
     /********************** Embed youtube video *********************/
@@ -165,9 +171,10 @@ $(document).ready(function () {
 
     $('#add-to-cal').html(myCalendar);
 
+    /***************** Form Submission Placeholder ******************/
 
-    /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', throttle(function (e) {
+/********************** RSVP **********************/
+$('#rsvp-form').on('submit', throttle(function (e) {
         e.preventDefault();
         const hashTime = new Date();
         const hashTimeFormat = hashTime.getUTCFullYear().toString() +
@@ -226,6 +233,16 @@ $(document).ready(function () {
         }
     }
 });
+
+/***************** Helper Functions ******************/
+function copyToClipboard(text) {
+    const temp = $("<input>");
+    $("body").append(temp);
+    temp.val(text).select();
+    document.execCommand("copy");
+    temp.remove();
+    alert("Copied to clipboard: " + text);
+}
 
 /********************** Extras **********************/
 // alert_markup
