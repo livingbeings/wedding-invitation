@@ -12,12 +12,12 @@ $(document).ready(function () {
         setTimeout(()=>{
             $('body').css('overflow', 'auto');
             $('#modal-welcome').addClass('remove');
-        },6000);
+        },5000);
     };
-		if(document.getElementById('modal-welcome')){
-			envelope.addEventListener('click', open_modal);
-			envelope_vertical.addEventListener('click', open_modal);
-		}
+    envelope.playbackRate=1.4;
+    envelope_vertical.playbackRate=1.4;
+	envelope.addEventListener('click', open_modal);
+	envelope_vertical.addEventListener('click', open_modal);
 
     /***************** Hero Swiper ******************/
     const swiper = new Swiper('.hero-swiper', {
