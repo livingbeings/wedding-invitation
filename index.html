@@ -21,7 +21,6 @@
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <link rel="preload">
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
     <script>
         // load css files from CDN if local node_modules fail
@@ -67,12 +66,12 @@
 <div class="modal-welcome" id="modal-welcome">
     <div class="modal-welcome-content">
         <video id="envelope" width="100%" preload="auto">
-            <!-- <source src="https://github.com/event-rsvp/alexmarcella/raw/refs/heads/master/video/envelope/envelope.m3u8#t=4.99"> -->
-            <!-- <source src="https://github.com/event-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_720.mp4#t=4.99" type="video/mp4"> -->
+            <source src="https://github.com/event-rsvp/alexmarcella/raw/refs/heads/master/video/envelope/envelope.m3u8#t=4.99" type="application/x-mpegURL">
+            <source src="https://github.com/event-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_720.mp4#t=4.99" type="video/mp4">
         </video>
         <video id="envelope_vertical" width="100%" preload="auto">
-            <!-- <source src="https://github.com/event-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_vertical/envelope_vertical.m3u8#t=4.99"> -->
-            <!-- <source src="https://github.com/event-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_vertical_720.mp4#t=4.99" type="video/mp4"> -->
+            <source src="https://github.com/event-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_vertical/envelope_vertical.m3u8#t=4.99" type="application/x-mpegURL">
+            <source src="https://github.com/event-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_vertical_720.mp4#t=4.99" type="video/mp4">
         </video>
     </div>
 </div>
