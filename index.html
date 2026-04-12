@@ -65,11 +65,11 @@
 
 <div class="modal-welcome" id="modal-welcome">
     <div class="modal-welcome-content">
-        <video playsinline muted webkit-playsinline id="envelope" width="100%" preload="auto">
+        <video playsinline muted webkit-playsinline id="envelope" width="100%" preload="metadata">
             <source src="https://github.com/events-rsvp/alexmarcella/raw/refs/heads/master/video/envelope/envelope.m3u8#t=4.99" type="application/x-mpegURL">
             <source src="https://github.com/events-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_720.mp4#t=4.99" type="video/mp4">
         </video>
-        <video playsinline muted webkit-playsinline id="envelope_vertical" width="100%" preload="auto">
+        <video playsinline muted webkit-playsinline id="envelope_vertical" width="100%" preload="metadata">
             <source src="https://github.com/events-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_vertical/envelope_vertical.m3u8#t=4.99" type="application/x-mpegURL">
             <source src="https://github.com/events-rsvp/alexmarcella/raw/refs/heads/master/video/envelope_vertical_720.mp4#t=4.99" type="video/mp4">
         </video>
@@ -327,9 +327,26 @@
 </section>
 
 <section id="video-bg" >
-    <div id="bgndVideo" class="player"
-        data-property="{videoURL:'https://youtu.be/unXC118G7r8',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:10, stopAt:400, opacity:1, loop:true,optimizeDisplay:true}">
-    </div> 
+    <!-- <div id="bgndVideo" class="player"
+        data-property="{
+            videoURL:'https://youtu.be/K2zr0ap0Svk',
+            containment:'#video-bg',
+            autoPlay:true, 
+            mute:true, 
+            showControls:false, 
+            opacity:1, 
+            loop:true,optimizeDisplay:true
+        }">
+    </div>  -->
+    <iframe id="bgndVideo" 
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/K2zr0ap0Svk?si=f_H6MWL4KYNEgNxH&amp;controls=0&autoplay=1&loop=1&playlist=K2zr0ap0Svk&optimizeDisplay:1" 
+    preload="lazy"
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </section>
 
 <section id="photo-album" class="section-padding">
